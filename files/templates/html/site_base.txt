@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="..\..\files\templates\html\site_style.css">
+</head>
+<body>
+<div class="topnav">
+	<a href ='..\..\index.html'>Home</a>
+	<a class='active' href="..\sites_index.html">Sites</a>
+	<a href="..\circuits_index.html">Circuits</a>
+	<a href="..\vendor_index.html">Vendors</a>
+	<a href="..\sc_index.html">Site Contacts</a>
+	</div>
+<!-- <nav style="display:inline;"><a href ='..\\index.html'><h1>Home</h1></a><a href="..\\sites_index.html"><h1>Sites</h1></a></nav> -->
+<header>
+	<h2>$SITE$</h2>
+	<font  style="background-color: black; font-size: smaller;">Last updated: $TIME</font>
+</header>
+
+<table>
+	$TDATA$
+</table>
+
+</body>
+</html>

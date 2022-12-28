@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+
+}
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 30px;
+  display: table-column;
+}
+
+.content {
+  list-style-type: none;
+/*  border: 1px solid #eee;*/
+  margin: 0;
+  height: auto;
+  padding: 40px 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.content:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.content .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+.content li {
+  border-bottom: 1px solid #eee;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.content .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Simple Network Dashboard</h1>
+<font  style="background-color: black; font-size: smaller;">Last updated: November 24, 2022-22:51:48 UTC +8</font>
+</header>
+
+<div class="columns">
+  <ul class="content">
+    <li class="header" style="background-color:blue">
+      <h2><a href="pages\sites_index.html" style="color:white">Sites</a></h2>
+    </li>
+  </ul>
+</div>
+<div class="columns">
+  <ul class="content">
+    <li class="header" style="background-color: grey">
+      <h2><a href="pages\sc_index.html" style="color:white">Site Contacts</a></h2>
+    </li>
+  </ul>
+</div>
+<div class="columns">
+  <ul class="content">
+    <li class="header" style="background-color:#04AA6D">
+      <h2><a href="pages\circuits_index.html" style="color:white">Circuits</a></h2>
+    </li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="content">
+    <li class="header" style="background-color:black">
+      <h2><a href="pages\vendor_index.html" style="color:white">Vendors</a></h2>
+    </li>
+  </ul>
+</div>
+
+</body>
+</html>

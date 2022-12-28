@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="..\\files\\templates\\html\\site_index_style.css">
+
+</head>
+<body>
+<div class="topnav">
+	<a href ='..\\index.html'>Home</a>
+	<a class='active' href="sites_index.html">Sites</a>
+	<a href="circuits_index.html">Circuits</a>
+	<a href="vendor_index.html">Vendors</a>
+	<a href="sc_index.html">Site Contacts</a>
+</div>
+<header>
+	<h1>Simple Sites</h1>
+	<h2>Total: $TOTAL$</h2>
+	<font  style="background-color: black; font-size: smaller;">Last updated: $TIME</font>
+</header>
+<div class="flex-container">
+	$DATA$  
+</div>
+</body>
+</html>

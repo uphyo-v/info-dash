@@ -1,0 +1,61 @@
+---
+- address: '"ADDRESS 1"'
+  contact:
+    - CONTACT 1
+    - CONTACT 2
+  site_ip: '192.168.1.0/24'
+  site_code: SITE1
+  wan#1:
+    provider: Site1Provider1
+    CE: 1.1.1.1/30
+    PE: None
+    BW: 1Gbps
+  wan#2:
+    provider: Site1Provider2
+    CE: 8.8.8.8/29
+    PE: 7
+    BW: 200Mbps
+
+- address: '"ADDRESS 2"'
+  contact:
+    - CONTACT 1
+  site_ip: '192.168.2.0/24'
+  site_code: SITE2
+  wan#1:
+    provider: Site2Provider1
+    CE: 1.1.1.1/30
+    PE: None
+    BW: 1Gbps
+  wan#2:
+    provider: Site2Provider2
+    CE: 2.2.2.2/29
+    PE: None
+    BW: 200Mbps
+
+- address: '"ADDRESS 3"'
+  contact:
+    - CONTACT 1
+  site_ip: '192.168.3.0/24'
+  site_code: SITE3
+  wan#1:
+    provider: Site3Provider1
+    CE: 1.1.1.1/30
+    PE: None
+    BW: 1Gbps
+  wan#2:
+    provider: Site3Provider2
+    CE: 2.2.2.2/29
+    PE: None
+    BW: 200Mbps
+
+- address: '"ADDRESS 3"'
+  contact:
+    - CONTACT 1
+  site_ip: '192.168.3.0/24'
+  site_code: SITE3
+  wan#1:
+    provider: Site3Provider1
+    CE: 1.1.1.1/30
+    PE: None
+    BW: 1Gbps
+  wan#2: ''

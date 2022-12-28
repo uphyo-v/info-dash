@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="..\files\templates\html\other_style.css">
+</head>
+<body>
+<div class="topnav">
+	<a href ='..\index.html'>Home</a>
+	<a href="sites_index.html">Sites</a>
+	<a href="circuits_index.html">Circuits</a>
+	<a class='active' href="vendor_index.html">Vendors</a>
+	<a href="sc_index.html">Site Contacts</a>
+</div>
+<header>
+	<h1>Simple Network Vendors</h1>
+	<font  style="background-color: black; font-size: smaller;">Last updated: $TIME</font>
+</header>
+<table>
+	$TDATA$
+</table>
+
+</body>
+</html>

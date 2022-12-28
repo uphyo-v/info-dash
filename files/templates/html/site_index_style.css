@@ -1,0 +1,45 @@
+header {
+	background-color: #666;
+	padding: 10px;
+	text-align: center;
+	font-size: 35px;
+	color: white;
+}
+.flex-container {
+	display: flex;
+	flex-flow: row wrap;
+	background-color: DodgerBlue;
+	justify-content: center;
+}
+
+.flex-container > div {
+	background-color: #f1f1f1;
+	width: 100px;
+	margin: 10px;
+	text-align: center;
+	line-height: 75px;
+	font-size: 30px;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}

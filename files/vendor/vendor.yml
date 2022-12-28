@@ -1,0 +1,26 @@
+- name: 'vendor1'
+  urls:
+    - 'https://www.google.com'
+    - 'https://www.microsoft.com'
+  attach: 
+    - 'attach1.txt'
+    - 'attach2.txt'
+
+- name: 'vendor2'
+  urls:
+    - 'https://www.amazon.com'
+    - 'https://www.yahoo.com'
+  attach: 
+    - 'attach1.txt'
+    - 'attach2.txt'
+
+- name: 'vendor3'
+  urls:
+    - 'https://www.apple.com'
+  attach: 
+    - 'attach1.txt'
+
+
+
+
+  
