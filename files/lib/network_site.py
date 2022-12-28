@@ -22,7 +22,11 @@ def detail_site(site,tdata):
 					# wan_info.append('<td>%s</td>'%str(v).upper())
 					if k.lower() == 'ce':
 						if len(v.split('/')) > 1:
-							if system('ping -n 2 %s'%v.split('/')[0]) == 0:
+							if os.name == nt:
+								pingcmd = 'ping -n 2'
+							else:
+								pingcmd = 'ping -c 2'
+							if system('%s %s'%(pingcmd,v.split('/')[0])) == 0:
 								color='lightgreen'
 								wan_info.append('<td style="background-color: lightgreen">'+ str(v).upper()+'</td>')
 								color_list.append(color)
