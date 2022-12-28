@@ -22,7 +22,7 @@ def detail_site(site,tdata):
 					# wan_info.append('<td>%s</td>'%str(v).upper())
 					if k.lower() == 'ce':
 						if len(v.split('/')) > 1:
-							if os.name == nt:
+							if os.name == 'nt':
 								pingcmd = 'ping -n 2'
 							else:
 								pingcmd = 'ping -c 2'
