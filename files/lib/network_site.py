@@ -60,7 +60,7 @@ def detail_circuits(site,cdata,clist,color):
 	return cdata,clist
 
 def get_vendor():
-	with open("..\\files\\vendor\\vendor.yml") as _:
+	with open("../files/vendor/vendor.yml") as _:
 		raw_vendors = (yaml.load(_, Loader=yaml.FullLoader))
 	vendors = sorted(raw_vendors, key=lambda x:x['name'])
 	vdata = []
@@ -85,7 +85,7 @@ def get_vendor():
 			elif k == 'attach':
 				vdata.append('<td style="padding-left: 3%">')				
 				for att in v:
-					vdata.append("<h3><li><a href='..\\files\\vendor\\%s' target='_blank'>%s</a></h3>"%(att,att))
+					vdata.append("<h3><li><a href='../files/vendor/%s' target='_blank'>%s</a></h3>"%(att,att))
 				vdata.append('</td>')
 
 			else:
@@ -114,19 +114,19 @@ start_time=day+"-"+start_time+' UTC +8'
 
 os.chdir('..')
 index_base=''
-with open ("..\\files\\templates\\html\\index_base.txt",'r+') as f:
+with open ("../files/templates/html/index_base.txt",'r+') as f:
 	raw = f.read()
 	index_base = raw.replace('$TIME',start_time)
 
-with open ("..\\index.html",'w') as f:
+with open ("../index.html",'w') as f:
 	f.write(index_base)
 
-with open ('..\\files\\site_info\\site_info.yaml') as _:
+with open ('../files/site_info/site_info.yaml') as _:
 	raw_sites = (yaml.load(_, Loader=yaml.FullLoader))
 
 sites = sorted(raw_sites, key=lambda x:x['site_code'])
 
-with open("..\\files\\templates\\html\\site_index_base.txt",'r') as f:
+with open("../files/templates/html/site_index_base.txt",'r') as f:
 	html_base = f.read()
 
 raw = []
@@ -136,31 +136,31 @@ cdata.append('<h2><tr><th>Site</th><th>Primary Circuit</th><th>Secondary Circuit
 for site in sites:
 	thead=[]
 	tdata=[]
-	with open("..\\files\\templates\\html\\site_base.txt",'r') as f:
+	with open("../files/templates/html/site_base.txt",'r') as f:
 		site_detail = f.read()
-	with open("..\\files\\templates\\html\\circuit_base.txt",'r') as f:
+	with open("../files/templates/html/circuit_base.txt",'r') as f:
 		circuit_detail = f.read()
-	raw.append("<div><a href='sites\\%s.html'>%s</a></div>"%(site['site_code'],site['site_code']))
+	raw.append("<div><a href='sites/%s.html'>%s</a></div>"%(site['site_code'],site['site_code']))
 	color_list,color,tdata = detail_site(site,tdata)
 	print(color_list)
 	cdata,clist=detail_circuits(site,cdata,clist,color_list)
 
 	if color:
-		raw = '\n'.join(raw).replace("<div><a href='sites\\%s.html'>%s</a></div>"%(site['site_code'],site['site_code'])
-			,"<div style='background-color:%s'><a href='..\\pages\\sites\\%s.html'>%s</a></div>"%(color,site['site_code'],site['site_code']))
+		raw = '\n'.join(raw).replace("<div><a href='sites/%s.html'>%s</a></div>"%(site['site_code'],site['site_code'])
+			,"<div style='background-color:%s'><a href='../pages/sites/%s.html'>%s</a></div>"%(color,site['site_code'],site['site_code']))
 		raw = raw.splitlines()
 
 	site_page = site_detail.replace('$TDATA$','\n'.join(tdata))
 	site_page = site_page.replace('$SITE$',site['site_code'])
 	site_page = site_page.replace('$TIME', start_time)
-	with open ("..\\pages\\sites\\%s.html"%site['site_code'],'w') as _:
+	with open ("../pages/sites/%s.html"%site['site_code'],'w') as _:
 		_.writelines(site_page)
 
 ## Write Circuit Page
 circuit_page = circuit_detail.replace('$TDATA$', '\n'.join(cdata))
 circuit_page = circuit_page.replace('$Total$',str(len(clist)))
 circuit_page = circuit_page.replace('$TIME', start_time)
-with open ("..\\pages\\circuits_index.html",'w') as _:
+with open ("../pages/circuits_index.html",'w') as _:
 	_.writelines(circuit_page)
 
 ## Write Sites page
@@ -168,25 +168,25 @@ data = '\n'.join(raw)
 html_base = html_base.replace('$TOTAL$',str(len(sites)))
 site_page=html_base.replace('$DATA$',data)
 site_page = site_page.replace('$TIME', start_time)
-with open ("..\\pages\\sites_index.html",'w') as _:
+with open ("../pages/sites_index.html",'w') as _:
 	_.writelines(site_page)
 
 ## Write Vendor page
-with open("..\\files\\templates\\html\\vendor_base.txt", 'r') as f:
+with open("../files/templates/html/vendor_base.txt", 'r') as f:
 	vendor_detail=f.read()
 vdata = get_vendor()
 vendor_page = vendor_detail.replace('$TDATA$','\n'.join(vdata))
 vendor_page = vendor_page.replace('$TIME', start_time)
-with open ("..\\pages\\vendor_index.html",'w') as _:
+with open ("../pages/vendor_index.html",'w') as _:
 	_.writelines(vendor_page)
 
 ## Write Sites_Contacts page
-with open("..\\files\\templates\\html\\sc_base.txt", 'r') as f:
+with open("../files/templates/html/sc_base.txt", 'r') as f:
 	sc_detail=f.read()
 scdata = sites_contacts(sites)
 sc_page = sc_detail.replace('$TDATA$','\n'.join(scdata))
 sc_page = sc_page.replace('$TIME', start_time)
-with open ("..\\pages\\sc_index.html",'w') as _:
+with open ("../pages/sc_index.html",'w') as _:
 	_.writelines(sc_page)
 
 
