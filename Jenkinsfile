@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('dev') {
       steps {
-        sh 'python -m SimpleHTTPServer'
+        sh 'python --version'
       }
     }
 
